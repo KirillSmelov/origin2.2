@@ -7,10 +7,9 @@ struct Account
 	std::string name;
 	double balance = 0;
 };
-void Change(Account* balance)
+void Change(Account* balance, double &NewBalance)
 {
-	std::cout << "Введите новый балансе: ";
-	std::cin >> balance->balance;
+	balance->balance = NewBalance;
 }
 
 int main(int argc, char** argv)
@@ -27,7 +26,10 @@ int main(int argc, char** argv)
 	std::cout << "Введите баланс: ";
 	Account balance;
 	std::cin >> balance.balance;
-	Change(&balance);
+	double NewBalance;
+	std::cout << "Введите новый баланс: ";
+	std::cin >> NewBalance;
+	Change(&balance,NewBalance);
 	std::cout << "Ваш счёт: " << name.name << " " << num.account_number << " " << balance.balance << std::endl;
 	return 0;
 }
