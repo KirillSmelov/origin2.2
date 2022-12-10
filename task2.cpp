@@ -7,9 +7,9 @@ struct Account
 	std::string name;
 	double balance = 0;
 };
-void Change(Account* balance, double &NewBalance)
+void Change(Account* account, double &NewBalance)
 {
-	balance->balance = NewBalance;
+	account->balance = NewBalance;
 }
 
 int main(int argc, char** argv)
