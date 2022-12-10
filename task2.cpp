@@ -17,19 +17,17 @@ int main(int argc, char** argv)
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	Account account;
 	std::cout << "Введите номер счёта: ";
-	Account num;
-	std::cin >> num.account_number;
+	std::cin >> account.account_number;
 	std::cout << "Введите имя владельца: ";
-	Account name;
-	std::cin >> name.name;
+	std::cin >> account.name;
 	std::cout << "Введите баланс: ";
-	Account balance;
-	std::cin >> balance.balance;
+	std::cin >> account.balance;
 	double NewBalance;
 	std::cout << "Введите новый баланс: ";
 	std::cin >> NewBalance;
-	Change(&balance,NewBalance);
-	std::cout << "Ваш счёт: " << name.name << " " << num.account_number << " " << balance.balance << std::endl;
+	Change(&account,NewBalance);
+	std::cout << "Ваш счёт: " << account.name << " " << account.account_number << " " << account.balance << std::endl;
 	return 0;
 }
